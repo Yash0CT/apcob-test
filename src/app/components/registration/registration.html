@@ -1,0 +1,60 @@
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+  <div class="row justify-content-center w-100">
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+
+      <div class="card shadow-sm border-0 px-3 py-4">
+        <div class="card-body">
+
+          <div class="text-center mb-4">
+            <h3 class="fw-bold text-dark">Create Account</h3>
+            <p class="text-muted small">Join us today! Enter your details below.</p>
+          </div>
+
+          @if (errorMessage()) {
+            <div class="alert alert-danger py-2 px-3 small text-center" role="alert">
+              {{ errorMessage() }}
+            </div>
+          }
+
+          <form (ngSubmit)="onRegister()">
+            
+            <div class="mb-3">
+              <label for="regEmail" class="form-label text-muted small fw-semibold">Email Address</label>
+              <input type="email" class="form-control" id="regEmail" name="email" 
+                [(ngModel)]="registerData.email" placeholder="name@example.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regUsername" class="form-label text-muted small fw-semibold">Username</label>
+              <input type="text" class="form-control" id="regUsername" name="username" 
+                [(ngModel)]="registerData.username" placeholder="Choose a username" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="regPassword" class="form-label text-muted small fw-semibold">Password</label>
+              <input type="password" class="form-control" id="regPassword" name="password" 
+                [(ngModel)]="registerData.password" placeholder="••••••••" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="confirmPassword" class="form-label text-muted small fw-semibold">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" 
+                [(ngModel)]="registerData.confirmPassword" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">Register</button>
+
+            <hr>
+
+            <div class="text-center">
+              <p class="text-muted small mb-0">Already have an account? <a routerLink="/login">Sign In here</a></p>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
