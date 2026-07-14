@@ -1,0 +1,17 @@
+<div class="d-flex flex-column vh-100 overflow-hidden">
+  
+  <app-welcome-header></app-welcome-header>
+
+  <div class="d-flex flex-grow-1 overflow-hidden">
+    
+    <app-welcome-side-nav></app-welcome-side-nav>
+
+    <main class="flex-grow-1 bg-light p-4 overflow-y-auto">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+
+  <app-welcome-footer></app-welcome-footer>
+
+</div>
