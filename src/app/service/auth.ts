@@ -11,13 +11,17 @@ export class Auth {
     constructor(){}
     
     // determining the role
-    login(username:string,password:string){
-        if(username === 'Admin' && password === 'Admin@123') {
+    login(username:string,password:string,captcha:boolean){
+        if(username === 'Admin' && password === 'Admin@123' && captcha) {
           this.currentUserRole.set("Admin");
         }
-        if(username === 'user' && password === 'user@123'){
+        if(username === 'user' && password === 'user@123' && captcha){
           this.currentUserRole.set("user");
         }
+    }
+
+    logoutPageNotFound(){
+      this.currentUserRole.set(null);
     }
 
     logout(){

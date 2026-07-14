@@ -9,7 +9,8 @@
         <li class="nav-item">
           <a class="nav-link text-white-50 hover-link py-2" 
              [routerLink]="item.path"
-             routerLinkActive="active bg-primary text-white">
+             routerLinkActive="active bg-primary text-white"
+             [routerLinkActiveOptions]="{ exact: true }">
             {{ item.name }}
           </a>
         </li>

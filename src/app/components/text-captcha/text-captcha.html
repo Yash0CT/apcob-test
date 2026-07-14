@@ -1,0 +1,18 @@
+<div class="border rounded p-3 bg-light w-100">
+  <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+    <canvas #captchaCanvas width="180" height="50" class="border rounded bg-white shadow-sm"></canvas>
+    
+    <button type="button" class="btn btn-outline-secondary btn-sm p-2" (click)="generateNewCaptcha()" title="Refresh Captcha">
+      🔄
+    </button>
+  </div>
+
+  <div>
+    <input type="text" 
+           class="form-control form-control-sm text-center fw-bold " 
+           placeholder="Enter the code above"
+           [ngModel]="userInput()" 
+           (ngModelChange)="onUserInputChange($event)"
+           maxLength="6">
+  </div>
+</div>

@@ -5,8 +5,7 @@
       @if (authService.currentUserRole() === 'Admin') {
         <div class="card border-danger shadow p-5">
           <div class="card-body">
-            <h1 class="display-4 fw-bold text-danger mb-3">Admin Portal</h1>
-            <p class="lead text-muted">Welcome, System Administrator. You have full root access privileges.</p>
+            <h1 class="display-4 fw-bold text-danger mb-3">Welcome Admin</h1>
             <hr class="my-4">
           </div>
         </div>
@@ -15,8 +14,7 @@
       @else if (authService.currentUserRole() === 'user') {
         <div class="card border-primary shadow p-5">
           <div class="card-body">
-            <h1 class="display-4 fw-bold text-primary mb-3">User Dashboard</h1>
-            <p class="lead text-muted">Welcome back! Glad to have you here today.</p>
+            <h1 class="display-4 fw-bold text-primary mb-3">Welcome User </h1>
             <hr class="my-4">
           </div>
         </div>

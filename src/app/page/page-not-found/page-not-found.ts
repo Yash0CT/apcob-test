@@ -13,7 +13,7 @@ export class PageNotFound {
 
   ngOnInit() {
     // Automatically log the user out if they hit a non-existent route
-    this.authService.logout();
+    this.authService.logoutPageNotFound();
   }
 
 }
