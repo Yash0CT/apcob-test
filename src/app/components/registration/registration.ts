@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { UserData } from '../../service/user-data';
 
 @Component({
   selector: 'app-registration',
@@ -10,6 +11,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Registration {
   private router = inject(Router)
+  private userDataService = inject(UserData)
 
   registerData = {
     username: '',
@@ -22,15 +24,18 @@ export class Registration {
 
   onRegister(){
     this.errorMessage.set(null);
-    
-    if(this.registerData.confirmPassword!==this.registerData.password){
-        this.errorMessage.set("Passwords doesn't match")
-        return;
+
+    if (this.registerData.confirmPassword !== this.registerData.password) {
+      this.errorMessage.set("Passwords doesn't match");
+      return;
     }
 
-    console.log("Registed user details",this.registerData);
+    // Hand data over to service
+    const result = this.userDataService.registerUser(this.registerData);
 
-    alert("Registration successful, Redirecting to login...")
-    this.router.navigate(["/login"]);
+    if (result.success) {
+      alert('Registration successful! (' + result.message + ')');
+      this.router.navigate(['/login']);
+    }
   }
 }
