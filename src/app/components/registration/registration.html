@@ -19,7 +19,7 @@
             </div>
           }
 
-          <form (ngSubmit)="onRegister()">
+          <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
             
             <!-- Row 1: Name and Email side-by-side -->
             <div class="row g-3 mb-3">

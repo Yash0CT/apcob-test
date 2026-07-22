@@ -31,6 +31,8 @@ export class Registration {
       this.errorMessage.set("Passwords do not match")
     }
 
+    console.log(this.registrationForm.value)
+
     // Hand data over to service
     const result = this.userDataService.registerUser(this.registrationForm.value);
 
